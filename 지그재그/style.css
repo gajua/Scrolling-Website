@@ -1,0 +1,233 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  /*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+}
+
+/* 화면에서 가려놓기 */
+.blind {
+  width: 1;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+body {
+  font-family: "Montserrat";
+  background-color: #673399;
+  min-height: 300vh;
+  overflow-x: hidden;
+}
+.container {
+  width: 1024px;
+  margin: 0 auto;
+}
+.head {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  position: relative;
+}
+.head::before {
+  content: "";
+  position: absolute;
+  background-color: #ff4600;
+  width: 195px;
+  height: 13px;
+  z-index: -1;
+  top: 85px;
+}
+.head::after {
+  content: "";
+  position: absolute;
+  background-color: #ff4600;
+  width: 152px;
+  height: 13px;
+  z-index: -1;
+  top: 125px;
+}
+.head h1 {
+  color: #fff;
+  font-weight: 100;
+  width: 300px;
+}
+.head p {
+  position: relative;
+  width: 520px;
+  color: #bd90e9;
+  padding: 20px;
+  line-height: 1.4;
+}
+.head p::before {
+  content: "";
+  background-color: #bd90e9;
+  position: absolute;
+  width: 70px;
+  border-radius: 10px;
+  height: 2px;
+  left: -80px;
+  top: 65px;
+}
+main {
+  margin-top: 60px;
+}
+main > div {
+  margin: 25px 0;
+  display: flex;
+}
+main > div > ul {
+  background-color: #fff;
+  margin: 0;
+  width: 777px;
+  font-size: 20px;
+  padding-left: 20px;
+}
+ul > h4 {
+  margin: 15px 0 15px 0;
+  color: #673399;
+}
+main > div > ul > li {
+  font-size: 16px;
+  line-height: 1.4;
+  color: #bd90e9;
+  margin-left: 18px;
+}
+li > span {
+  color: #000;
+  font-size: 14px;
+}
+h3 {
+  width: 220px;
+  height: 130px;
+  margin: 0;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 100;
+  font-size: 26px;
+}
+.rest .imgBox {
+  background-image: url(./images/photo01.png);
+  position: absolute;
+  z-index: -1;
+  opacity: 0.4;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 220px;
+  height: 130px;
+}
+.craft {
+  position: relative;
+}
+.craft .imgBox {
+  background-image: url(./images/photo02.png);
+  position: absolute;
+  z-index: -1;
+  opacity: 0.6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 220px;
+  height: 130px;
+  right: 0px;
+}
+
+.scrap .imgBox {
+  background-image: url(./images/photo03.png);
+  position: absolute;
+  z-index: -1;
+  opacity: 0.6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 220px;
+  height: 130px;
+}
+#head {
+  position: fixed;
+  opacity: 0;
+}
+#rest {
+  position: absolute;
+  top: 250px;
+  left: -2000px;
+}
+#craft {
+  position: absolute;
+  right: -2000px;
+  top: 450px;
+}
+#scrap {
+  position: absolute;
+  left: -2000px;
+  top: 650px;
+}
+.arrow {
+  position: fixed;
+  right: 5%;
+  top: 20%;
+  bottom: 5%;
+  z-index: -10;
+  font-size: 60px;
+  width: 147px;
+  height: 66px;
+  transition: 0.35s;
+  transform: rotate(90deg);
+}
+i.fa-angle-double-right {
+  color: #fff;
+  position: absolute;
+  right: 0%;
+  animation: 1.5s arrowAni infinite linear;
+}
+i.fa-angle-double-right:nth-child(1) {
+  animation-delay: 0s;
+}
+i.fa-angle-double-right:nth-child(2) {
+  animation-delay: 0.5s;
+}
+i.fa-angle-double-right:nth-child(3) {
+  animation-delay: 1s;
+}
+@keyframes arrowAni {
+  0% {
+    right: 150px;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    right: 0;
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+/* 임의의 영역 생성 */
+.scrollBar {
+  width: 200px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+/* 아래의 모든 코드는 영역::코드로 사용 */
+::-webkit-scrollbar {
+  width: 10px; /* 스크롤바의 너비 */
+}
+
+::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: linear-gradient(0deg, #ff1b69, #ff0, #2196f3, #9c27b0, #ff1b69);
+  animation: scroll 2s linear infinite; /* 스크롤바의 색상 */
+  transition: 0.5s;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, 0.1); /*스크롤바 뒷 배경 색상*/
+}
+@keyframes scroll {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
